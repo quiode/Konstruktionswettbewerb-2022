@@ -14,9 +14,9 @@ void Maehdrescher::setMotors(uint8_t speed, uint8_t direction)
     motor2.run(direction);
 }
 
-void Maehdrescher::start()
+void Maehdrescher::forward()
 {
-    setMotors(255, FORWARD);
+    setMotors(255, BACKWARD);
 }
 
 void Maehdrescher::stop()
@@ -26,5 +26,5 @@ void Maehdrescher::stop()
 
 void Maehdrescher::backward()
 {
-    setMotors(255, BACKWARD);
+    setMotors(255, FORWARD);
 }

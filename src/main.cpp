@@ -4,15 +4,10 @@
 #include <Arduino.h>
 #include <AFMotor.h>
 
+Robot robot;
+
 void setup()
 {
-  delay(1000);
-
-  Robot robot;
-
-  robot.forward();
-
-  robot.maehdrescher.start();
 }
 
 void loop()

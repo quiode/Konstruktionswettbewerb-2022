@@ -15,7 +15,7 @@ public:
 
     void setMotors(uint8_t speed, uint8_t direction);
 
-    void start();
+    void forward();
 
     void stop();
 
