@@ -11,31 +11,31 @@ void setup()
 {
   delay(7000);
 
-  robot.forward();
+  robot.turnLeft();
 
   robot.maehdrescher.forward();
 }
 
 void loop()
 {
-  count++;
-  const long distance = robot.ultrasonicSensor.getDistance();
+  // count++;
+  // // const long distance = robot.ultrasonicSensor.getDistance();
 
-  robot.forward();
-  robot.maehdrescher.forward();
+  // // robot.forward();
+  // // robot.maehdrescher.forward();
 
-  // if (distance < 10)
-  // {
-  //   robot.maehdrescher.stop();
-  // }
-  // if (distance < 25)
+  // // if (distance < 10)
+  // // {
+  // //   robot.maehdrescher.stop();
+  // // }
+  // // if (distance < 25)
+  // // {
+  // //   robot.turnLeft();
+  // // }
+  // if (count % 10 == 0)
   // {
   //   robot.turnLeft();
   // }
-  if (count % 10 == 0)
-  {
-    robot.turnLeft();
-  }
 
-  delay(100);
+  // delay(100);
 }

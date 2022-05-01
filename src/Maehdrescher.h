@@ -1,7 +1,7 @@
 #pragma once
 #include <AFMotor.h>
 
-#define motorNumber 1
+#define motorNumber 2
 
 class Maehdrescher
 {
