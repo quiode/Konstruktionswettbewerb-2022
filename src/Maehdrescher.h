@@ -1,17 +1,15 @@
 #pragma once
 #include <AFMotor.h>
 
-#define motor1Number 1
-#define motor2Number 2
+#define motorNumber 1
 
 class Maehdrescher
 {
 private:
-    AF_DCMotor motor1{motor1Number};
-    AF_DCMotor motor2{motor2Number};
+    AF_DCMotor motor{motorNumber};
 
 public:
-    Maehdrescher(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number);
+    Maehdrescher(uint8_t motorNum = motorNumber);
 
     void setMotors(uint8_t speed, uint8_t direction);
 

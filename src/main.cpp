@@ -5,9 +5,11 @@
 
 Robot robot;
 
+unsigned long count = 0;
+
 void setup()
 {
-  delay(5000);
+  delay(7000);
 
   robot.forward();
 
@@ -16,4 +18,24 @@ void setup()
 
 void loop()
 {
+  count++;
+  const long distance = robot.ultrasonicSensor.getDistance();
+
+  robot.forward();
+  robot.maehdrescher.forward();
+
+  // if (distance < 10)
+  // {
+  //   robot.maehdrescher.stop();
+  // }
+  // if (distance < 25)
+  // {
+  //   robot.turnLeft();
+  // }
+  if (count % 10 == 0)
+  {
+    robot.turnLeft();
+  }
+
+  delay(100);
 }

@@ -1,17 +1,15 @@
 #include "Maehdrescher.h"
 #include <AFMotor.h>
 
-Maehdrescher::Maehdrescher(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number) : motor1{motor1Num}, motor2{motor2Num}
+Maehdrescher::Maehdrescher(uint8_t motor1Num = motorNumber) : motor{motor1Num}
 {
 }
 
 void Maehdrescher::setMotors(uint8_t speed, uint8_t direction)
 {
-    motor1.setSpeed(speed);
-    motor2.setSpeed(speed);
+    motor.setSpeed(speed);
 
-    motor1.run(direction);
-    motor2.run(direction);
+    motor.run(direction);
 }
 
 void Maehdrescher::forward()

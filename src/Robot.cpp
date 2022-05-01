@@ -4,14 +4,14 @@
 #include "Maehdrescher.h"
 #include "AFMotor.h"
 
-Robot::Robot(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number, uint8_t motorRightNum = motorRightNumber, uint8_t motorLeftNum = motorLeftNumber, int pingPin = pingPinNumber, int echoPin = echoPinNumber) : maehdrescher{motor1Num, motor2Num}, motorRight{motorRightNum}, motorLeft{motorLeftNum}, ultrasonicSensor{pingPin, echoPin}
+Robot::Robot(uint8_t motor1Num = motorNumber, uint8_t motorRightNum = motorRightNumber, uint8_t motorLeftNum = motorLeftNumber, int pingPin = pingPinNumber, int echoPin = echoPinNumber) : maehdrescher{motor1Num}, motorRight{motorRightNum}, motorLeft{motorLeftNum}, ultrasonicSensor{pingPin, echoPin}
 {
 }
 
 void Robot::drive(uint8_t speed, uint8_t direction)
 {
     motorRight.setSpeed(speed);
-    motorLeft.setSpeed(speed * 0.8);
+    motorLeft.setSpeed(speed);
 
     motorRight.run(direction);
     motorLeft.run(direction);

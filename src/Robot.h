@@ -17,7 +17,7 @@ private:
     AF_DCMotor motorLeft{motorLeftNumber};
 
 public:
-    Robot(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number, uint8_t motor3Num = motorRightNumber, uint8_t motor4Num = motorLeftNumber, int pingPin = pingPinNumber, int echoPin = echoPinNumber);
+    Robot(uint8_t motor1Num = motorNumber, uint8_t motor3Num = motorRightNumber, uint8_t motor4Num = motorLeftNumber, int pingPin = pingPinNumber, int echoPin = echoPinNumber);
 
     void drive(uint8_t speed, uint8_t direction);
 
