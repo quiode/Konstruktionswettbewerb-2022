@@ -16,10 +16,19 @@ private:
     AF_DCMotor motorRight{motorRightNumber};
     AF_DCMotor motorLeft{motorLeftNumber};
 
+    enum Direction
+    {
+        isForward,
+        isBackward,
+        isStop,
+        isLeft,
+        isRight,
+    };
+
+    Direction direction;
+
 public:
     Robot(uint8_t motor1Num = motorNumber, uint8_t motor3Num = motorRightNumber, uint8_t motor4Num = motorLeftNumber, int pingPin = pingPinNumber, int echoPin = echoPinNumber);
-
-    void drive(uint8_t speed, uint8_t direction);
 
     void stop();
 
@@ -30,4 +39,7 @@ public:
     void turnLeft();
 
     void turnRight();
+
+private:
+    void drive(uint8_t speed, uint8_t direction);
 };

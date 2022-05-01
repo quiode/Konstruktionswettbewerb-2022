@@ -7,6 +7,7 @@ class Maehdrescher
 {
 private:
     AF_DCMotor motor{motorNumber};
+    bool isForward;
 
 public:
     Maehdrescher(uint8_t motorNum = motorNumber);
