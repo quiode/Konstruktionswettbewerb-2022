@@ -4,17 +4,17 @@
 #include "Maehdrescher.h"
 #include "AFMotor.h"
 
-Robot::Robot(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number, uint8_t motor3Num = motor3Number, uint8_t motor4Num = motor4Number, int pingPin = pingPinNumber, int echoPin = echoPinNumber) : maehdrescher{motor1Num, motor2Num}, motor3{motor3Num}, motor4{motor4Num}, ultrasonicSensor{pingPin, echoPin}
+Robot::Robot(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number, uint8_t motorRightNum = motorRightNumber, uint8_t motorLeftNum = motorLeftNumber, int pingPin = pingPinNumber, int echoPin = echoPinNumber) : maehdrescher{motor1Num, motor2Num}, motorRight{motorRightNum}, motorLeft{motorLeftNum}, ultrasonicSensor{pingPin, echoPin}
 {
 }
 
 void Robot::drive(uint8_t speed, uint8_t direction)
 {
-    motor3.setSpeed(speed);
-    motor4.setSpeed(speed);
+    motorRight.setSpeed(speed);
+    motorLeft.setSpeed(speed * 0.8);
 
-    motor3.run(direction);
-    motor4.run(direction);
+    motorRight.run(direction);
+    motorLeft.run(direction);
 }
 
 void Robot::stop()
@@ -34,18 +34,18 @@ void Robot::forward()
 
 void Robot::turnLeft()
 {
-    motor3.setSpeed(255);
-    motor4.setSpeed(255);
+    motorRight.setSpeed(255);
+    motorLeft.setSpeed(255);
 
-    motor3.run(FORWARD);
-    motor4.run(BACKWARD);
+    motorRight.run(FORWARD);
+    motorLeft.run(BACKWARD);
 }
 
 void Robot::turnRight()
 {
-    motor3.setSpeed(255);
-    motor4.setSpeed(255);
+    motorRight.setSpeed(255);
+    motorLeft.setSpeed(255);
 
-    motor3.run(BACKWARD);
-    motor4.run(FORWARD);
+    motorRight.run(BACKWARD);
+    motorLeft.run(FORWARD);
 }

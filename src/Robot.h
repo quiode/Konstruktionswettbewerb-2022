@@ -3,8 +3,8 @@
 #include "UltrasonicSensor.h"
 #include <AFMotor.h>
 
-#define motor3Number 3
-#define motor4Number 4
+#define motorRightNumber 3
+#define motorLeftNumber 4
 
 class Robot
 {
@@ -13,11 +13,11 @@ public:
     UltrasonicSensor ultrasonicSensor{};
 
 private:
-    AF_DCMotor motor3{motor3Number};
-    AF_DCMotor motor4{motor4Number};
+    AF_DCMotor motorRight{motorRightNumber};
+    AF_DCMotor motorLeft{motorLeftNumber};
 
 public:
-    Robot(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number, uint8_t motor3Num = motor3Number, uint8_t motor4Num = motor4Number, int pingPin = pingPinNumber, int echoPin = echoPinNumber);
+    Robot(uint8_t motor1Num = motor1Number, uint8_t motor2Num = motor2Number, uint8_t motor3Num = motorRightNumber, uint8_t motor4Num = motorLeftNumber, int pingPin = pingPinNumber, int echoPin = echoPinNumber);
 
     void drive(uint8_t speed, uint8_t direction);
 
