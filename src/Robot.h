@@ -26,4 +26,8 @@ public:
     void backward();
 
     void forward();
+
+    void turnLeft();
+
+    void turnRight();
 };

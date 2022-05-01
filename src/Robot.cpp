@@ -31,3 +31,21 @@ void Robot::forward()
 {
     drive(255, FORWARD);
 }
+
+void Robot::turnLeft()
+{
+    motor3.setSpeed(255);
+    motor4.setSpeed(255);
+
+    motor3.run(FORWARD);
+    motor4.run(BACKWARD);
+}
+
+void Robot::turnRight()
+{
+    motor3.setSpeed(255);
+    motor4.setSpeed(255);
+
+    motor3.run(BACKWARD);
+    motor4.run(FORWARD);
+}
