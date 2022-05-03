@@ -38,11 +38,12 @@ void Robot::backward()
 
 void Robot::forward()
 {
-    if (direction != Robot::Direction::isForward)
-    {
-        direction = Robot::Direction::isForward;
-        drive(255, FORWARD);
-    }
+    // if (direction != Robot::Direction::isForward)
+    // {
+    //     direction = Robot::Direction::isForward;
+    //     drive(255, FORWARD);
+    // }
+    drive(255, FORWARD);
 }
 
 void Robot::turnLeft()
